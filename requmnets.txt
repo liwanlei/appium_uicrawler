@@ -1,0 +1,9 @@
+PyYAML==3.12
+selenium==3.0.2
+lxml==4.8.0
+opencv-python-headless==4.1.2.30
+Pillow==9.0.1
+Logbook==1.1.0
+Appium-Python-Client==0.26
+loguru==0.6.0
+opencv-contrib-python==4.5.2.52

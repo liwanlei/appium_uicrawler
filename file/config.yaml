@@ -1,0 +1,103 @@
+LOGINELEMENT:
+  #开启自动登录功能
+  AUTOLOGIN: false
+
+  #Android 登录相关元素及操作
+  LOGIN_ELEMENTS_ANDROID:
+    - ANDROID_USERNAME:
+        XPATH: '//*[@resource-id="login"]'
+        ACTION: input
+        VALUE: '13691034101'
+    - ANDROID_PASSWORD:
+        XPATH: '//*[@resource-id="password"]'
+        ACTION: input
+        VALUE: '123456'
+    - ANDROID_LOGIN_BUTTON:
+        XPATH: '//*[@resource-id="test_login_button"]'
+        ACTION: click
+        VALUE: '1'
+#全局配置
+GENERAL:
+
+  #点击次数
+  MAX_CLICK_COUNT: 10000
+  #查找元素的时间
+  DEFAULT_WAIT: 0.2
+  #查找元素的间隔时间
+  INTERVAL_SEC: 0.1
+  #是否忽略Crash,设为true时,
+  IGNORE_CRASH: true
+  #运行时间限制(分钟)
+  RUNNING_TIME: 100
+  #滑动次数 页面无变化是否滑动下，
+  SCPRE_AUTO: true
+  #滑动次数 页面无变化互动次数
+  SCPRE_NUM: 2
+  #控制是否生成截图, false时不会生成截图 但能提高运行速度
+  SCREEN_SHOT: true
+  #控制是否生成视频
+  VIDEO: true
+  #Crash时截图显示步骤数量
+  CRASH_PIC_COUNT: 10
+  #遍历深度
+  MAX_DEPTH: 800
+LIST:
+  #tarbar
+  ANDROID_BOTTOM_TAB_BAR_ID: '@resource-id="com.qihoo.browser:id/title"'
+  #输入文本的类型
+  INPUT_CLASS_LIST:
+    - android.widget.EditText
+
+  #待输入的文本 按照1：1等比例
+  INPUT_TEXT_LIST:
+    - 'leizi'
+    - '123'
+
+  #UI元素中出现下列文字时 触发back键(iOS 由左向右划触发返回操作)
+  PRESS_BACK_TEXT_LIST:
+    - 返回
+    - 隐私协议
+
+  #当pp跳转到以下app时 触发back键
+  PRESS_BACK_PACKAGE_LIST:
+    - com.android.settings
+
+  #当前遇到以下Activity时 触发back键
+  PRESS_BACK_ACTIVITY_LIST:
+    - com.autohome.mainlib.business.ui.commonbrowser.activity.CommBrowserActivity
+
+  #不点击包含以下文本的控件
+  ITEM_BLACKLIST:
+    - 客服
+    - 退出
+    - 电话
+    - 拒绝
+    - 拍照
+    - 禁止
+    - 呼叫
+    - 低电量模式
+
+  #除了APP本身的包名外 根据以下包名判断是否跳出了APP,当app跳转到以下app时被认为是合法，会继续遍历操作，待实现
+  ANDROID_VALID_PACKAGE_LIST:
+
+
+  #白名单，遇到包含以下文本的控件，会多次点击（默认所有控件只点一次）这里在UI遍历使用
+  ITEM_WHITE_LIST:
+    - 确定
+    - 允许
+    - 取消
+    - 提交
+    - 取消
+
+  #不点击以下类型控件及其子元素
+  IOS_EXCLUDE_BAR:
+    #键盘
+    - XCUIElementTypeKeyboard
+
+  #不点击以下类型的元素
+  IOS_EXCLUDE_TYPE:
+    - XCUIElementTypeApplication
+
+  #不点击以下类型的元素
+  ANDROID_EXCLUDE_TYPE:
+    - android.widget.ImageButton
