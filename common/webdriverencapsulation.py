@@ -1,33 +1,31 @@
 '''关于appium的一个简单的封装'''
 import os.path
+import time
 from datetime import timedelta, datetime
-
 from appium import webdriver
-from appium.webdriver.webdriver import WebDriver
-
 from common.disapp import make_dis
 from common.log import LOG
 from selenium.webdriver.support.wait import WebDriverWait
-
 from appium.webdriver.common.touch_action import TouchAction
-
 from common.pictools import opear
 
 
 class deriver_encapsulation(object):
     def __init__(self, port, Testplatform, platform_version, dev, apkname, activity):
-        self.driver = self.init()
+
         self.port = port
         self.Testplatform = Testplatform
         self.platform_version = platform_version
         self.dev = dev
         self.apkname = apkname
         self.activity = activity
+        self.driver = self.init()
 
     def init(self):
         dis_app = make_dis(self.Testplatform, self.platform_version, self.dev, self.apkname, self.activity)
         LOG.info(dis_app)
         deriver = webdriver.Remote('http://localhost:{}/wd/hub'.format(str(self.port)), dis_app)
+        time.sleep(10)
         return deriver
 
     def find_ele(self, method, path, timeout=1):

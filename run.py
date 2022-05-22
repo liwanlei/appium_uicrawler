@@ -37,14 +37,5 @@ def uicrawler():
 cli.add_command(uicrawler)
 
 if __name__=="__main__":
-    # LOG.info('UI自动化相关测试开始执行')
-    #
-    # path=os.path.join(basepth,'case')
-    # error, faill, success, report_dir=report(casepath=path)
-    # greatreport(passnum=success,failnum=faill,errornum=error,testreport=report_dir,testlog=log)
-    # MakeSend(path=recording).shangshuanxingneng()
-    # Dingtalik_conent='UI自动测试，客户端执行完毕，\n  通过用例：%s个， 失败用例：%s 个， 错误用例：%s，\n 测试报告测试日志生成完毕，可以去平台观看，'%(success,faill,error)
-    # send_ding(content=Dingtalik_conent)
-    # run('RF8MC0GHRHR', 'com.qihoo.browser', '4723', 'Android',call_num)
 
     cli()

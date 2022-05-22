@@ -12,7 +12,7 @@ from common.Parsexml import Excuption
 from common.disapp import make_dis
 import time
 
-from common.webdriverencapsulation import deriver_new
+from common.webdriverencapsulation import deriver_encapsulation
 from common.log import LOG
 from common.unitil import getversion
 
