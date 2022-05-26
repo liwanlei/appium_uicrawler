@@ -13,13 +13,6 @@ import  click
 from common.apktools import get_apkname,get_apk_lanchactivity
 basepth=os.getcwd()
 
-
-@click.group()
-def cli():
-    pass
-
-
-@click.command()
 def uicrawler():
     LOG.name = "基于Appium UI遍历测试"
     log = os.path.join(os.path.join(basepth, 'testlog'), 'UI-' + call_num + '.log')
@@ -34,8 +27,6 @@ def uicrawler():
     run('RPG0218B26005034', testapk, '4723', 'Android', call_num,testapklanchactivity)
     runlog.close()
     runlog.terminate()
-cli.add_command(uicrawler)
 
 if __name__=="__main__":
-
-    cli()
+    uicrawler()
