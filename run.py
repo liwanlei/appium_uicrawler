@@ -15,10 +15,11 @@ basepth=os.getcwd()
 
 def uicrawler():
     LOG.name = "基于Appium UI遍历测试"
-    log = os.path.join(os.path.join(basepth, 'testlog'), 'UI-' + call_num + '.log')
-    testapk = get_apkname("/Users/lileilei/Desktop/testplan/pc_clicent_new/installapk/autohome.apk")
+    os.path.join(os.path.join(basepth, 'testlog'), 'UI-' + call_num + '.log')
+    path=os.path.join(os.path.join(os.getcwd(),"installapk"),'autohome.apk')
+    testapk = get_apkname(path)
     testapklanchactivity = get_apk_lanchactivity(
-        "/Users/lileilei/Desktop/testplan/pc_clicent_new/installapk/autohome.apk")
+        path)
     path = os.path.join(os.path.join(os.getcwd(), 'testlog'), call_num)
     if os.path.exists(path) is False:
         os.mkdir(path)
