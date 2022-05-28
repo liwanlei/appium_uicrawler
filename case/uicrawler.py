@@ -27,9 +27,9 @@ def run(dev, apknamne, port, Testplatform, call_num,activity):
     starttime = time.time()
     dis_app = make_dis(Testplatform, platform_version, dev,apknamne,activity)
     LOG.info(dis_app)
-    deriver = webdriver.Remote('http://localhost:{}/wd/hub'.format(str(port)), dis_app)
-    time.sleep(10)
-    derivernew = deriver_new(deriver)
-    excuptionUICrawler = Excuption(file, dev, path)
+    derivernew = deriver_encapsulation(port=port, Testplatform="Android",
+                                       platform_version=platform_version, dev=dev,
+                                       apkname=apknamne, activity=activity)
+    excuptionUICrawler = Excuption(file, dev, path,activity)
     excuptionUICrawler.run(derivernew, starttime, True, apknamne, 0)
     excuptionUICrawler.createreport()
