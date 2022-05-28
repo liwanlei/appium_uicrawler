@@ -4,12 +4,11 @@
 @time: 2018/5/6 17:32 
 """
 from case.uicrawler import run
-import  os,datetime
-from common.log import LOG,logger
+import  os
+from common.log import LOG
 from common.execlog import run_adb_log
 import multiprocessing
 from common.Makecasenum import call_num
-import  click
 from common.apktools import get_apkname,get_apk_lanchactivity
 basepth=os.getcwd()
 
